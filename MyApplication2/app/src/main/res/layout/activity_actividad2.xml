@@ -33,7 +33,6 @@
     <Button
             android:text="Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btn_ActividadUno" app:layout_anchorGravity="top|center"
-            app:layout_anchor="@+id/include"/>
+            android:layout_height="wrap_content" android:id="@+id/button"/>
 
 </android.support.design.widget.CoordinatorLayout>
