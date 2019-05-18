@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".Actividad2"
+                android:name=".Actividad2" android:launchMode="singleTask"
                 android:label="@string/title_activity_actividad2"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
