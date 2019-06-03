@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_consultar_jugador.*
+import kotlinx.android.synthetic.main.activity_consultar_libro.*
 
 class ConsultarLibroActivity : AppCompatActivity() {
     var padreId : Int = 0
@@ -16,7 +16,7 @@ class ConsultarLibroActivity : AppCompatActivity() {
         usuario = intent.getStringExtra("usuario").toString()
         equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
         padreId = intent.getIntExtra("padreId", -1)
-        setContentView(R.layout.activity_consultar_jugador)
+        setContentView(R.layout.activity_consultar_libro)
         val adapter = ArrayAdapter<Libro>(
             this,
             android.R.layout.simple_list_item_1,

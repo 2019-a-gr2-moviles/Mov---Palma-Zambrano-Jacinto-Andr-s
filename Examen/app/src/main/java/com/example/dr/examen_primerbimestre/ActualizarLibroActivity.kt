@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_actualizar_jugador.*
+import kotlinx.android.synthetic.main.activity_actualizar_libro.*
 
 class ActualizarLibroActivity : AppCompatActivity() {
     var id :Int = 0;
@@ -13,7 +13,7 @@ class ActualizarLibroActivity : AppCompatActivity() {
     var equipoRespaldo : Autor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_actualizar_jugador)
+        setContentView(R.layout.activity_actualizar_libro)
         usuario = intent.getStringExtra("usuario").toString()
         val jugadorRecibido = intent.getParcelableExtra<Libro>("Libro")
         equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")

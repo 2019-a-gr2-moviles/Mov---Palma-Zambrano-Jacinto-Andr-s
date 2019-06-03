@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ingresarUsuario(){
-        BDAutores.guardarUsuario(txtNombre.text.toString())
+        BDAutores.guardarUsuario(txtNombres.text.toString())
         val intentMenu = Intent(this, MenuActivity::class.java)
-        intentMenu.putExtra("usuario", txtNombre.text.toString())
+        intentMenu.putExtra("usuario", txtNombres.text.toString())
         startActivity(intentMenu)
     }
 }

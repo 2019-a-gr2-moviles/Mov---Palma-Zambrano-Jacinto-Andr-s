@@ -13,33 +13,33 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/txtCampeonAct"
-            app:layout_constraintStart_toStartOf="@+id/txtNumCopInter"
-            app:layout_constraintEnd_toEndOf="@+id/txtNumCopInter" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNumCopInter"/>
+            app:layout_constraintStart_toStartOf="@+id/numLibros"
+            app:layout_constraintEnd_toEndOf="@+id/numLibros" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/numLibros"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtFechaCreacion" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtLiga"
-            app:layout_constraintStart_toStartOf="@+id/txtLiga" app:layout_constraintEnd_toEndOf="@+id/txtLiga"
+            android:id="@+id/txtFechaNacimiento" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtApellidos"
+            app:layout_constraintStart_toStartOf="@+id/txtApellidos" app:layout_constraintEnd_toEndOf="@+id/txtApellidos"
             app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtLiga" android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre" app:layout_constraintEnd_toEndOf="@+id/txtNombre"
+            android:id="@+id/txtApellidos" android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombres"
+            app:layout_constraintStart_toStartOf="@+id/txtNombres" app:layout_constraintEnd_toEndOf="@+id/txtNombres"
             app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombre" android:layout_marginTop="32dp"
+            android:id="@+id/txtNombres" android:layout_marginTop="32dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -76,10 +76,10 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtNumCopInter"
-            app:layout_constraintStart_toStartOf="@+id/txtFechaCreacion"
-            app:layout_constraintEnd_toEndOf="@+id/txtFechaCreacion" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtFechaCreacion"/>
+            android:id="@+id/numLibros"
+            app:layout_constraintStart_toStartOf="@+id/txtFechaNacimiento"
+            app:layout_constraintEnd_toEndOf="@+id/txtFechaNacimiento" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaNacimiento"/>
     <Button
             android:text="Menú"
             android:layout_width="wrap_content"

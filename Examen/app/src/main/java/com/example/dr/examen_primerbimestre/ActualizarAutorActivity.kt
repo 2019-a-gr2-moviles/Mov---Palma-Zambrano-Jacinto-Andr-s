@@ -4,20 +4,20 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_actualizar.*
+import kotlinx.android.synthetic.main.activity_actualizar_autor.*
 
 class ActualizarAutorActivity : AppCompatActivity() {
     var padreId : Int = 0
     var usuario :String = "";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_actualizar)
+        setContentView(R.layout.activity_actualizar_autor)
         usuario = intent.getStringExtra("usuario").toString()
         val equipoRecibida = intent.getParcelableExtra<Autor>("Equipo")
-        txtNombre.setText(equipoRecibida.nombres.toString())
-        txtLiga.setText(equipoRecibida.apellidos.toString())
-        txtFechaCreacion.setText(equipoRecibida.fechaNacimiento.toString())
-        txtNumCopInter.setText(equipoRecibida.numeroLibros.toString())
+        txtNombres.setText(equipoRecibida.nombres.toString())
+        txtApellidos.setText(equipoRecibida.apellidos.toString())
+        txtFechaNacimiento.setText(equipoRecibida.fechaNacimiento.toString())
+        numLibros.setText(equipoRecibida.numeroLibros.toString())
         txtCampeonAct.setText(equipoRecibida.ecuatoriano.toString())
         padreId = equipoRecibida.id!!;
         btnActualizar.setOnClickListener { actualizarEquipo() }
@@ -29,10 +29,10 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun actualizarEquipo(){
         val actualizarEquipo = Autor(id = padreId,
-            nombres = txtNombre.text.toString(),
-            apellidos = txtLiga.text.toString(),
-            fechaNacimiento = txtFechaCreacion.text.toString(),
-            numeroLibros = txtNumCopInter.text.toString().toInt(),
+            nombres = txtNombres.text.toString(),
+            apellidos = txtApellidos.text.toString(),
+            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
         BDAutores.actualizarEquipo(actualizarEquipo)
@@ -52,10 +52,10 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun crearJugador(){
         val equipoRespaldo = Autor(id = padreId,
-            nombres = txtNombre.text.toString(),
-            apellidos = txtLiga.text.toString(),
-            fechaNacimiento = txtFechaCreacion.text.toString(),
-            numeroLibros = txtNumCopInter.text.toString().toInt(),
+            nombres = txtNombres.text.toString(),
+            apellidos = txtApellidos.text.toString(),
+            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
         val retorno = Intent(this, IngresarLibroActivity::class.java)
@@ -67,10 +67,10 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun gestionarJugador(){
         val equipoRespaldo = Autor(id = padreId,
-            nombres = txtNombre.text.toString(),
-            apellidos = txtLiga.text.toString(),
-            fechaNacimiento = txtFechaCreacion.text.toString(),
-            numeroLibros = txtNumCopInter.text.toString().toInt(),
+            nombres = txtNombres.text.toString(),
+            apellidos = txtApellidos.text.toString(),
+            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
         val retorno = Intent(this, ConsultarLibroActivity::class.java)

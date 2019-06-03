@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_consultar.*
+import kotlinx.android.synthetic.main.activity_consultar_autor.*
 
 class ConsultarAutorActivity : AppCompatActivity() {
     var usuario :String = "";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_consultar)
+        setContentView(R.layout.activity_consultar_autor)
         usuario = intent.getStringExtra("usuario").toString()
         val adapter = ArrayAdapter<Autor>(
             this,

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_ingresar_jugador.*
+import kotlinx.android.synthetic.main.activity_ingresar_libro.*
 
 class IngresarLibroActivity : AppCompatActivity() {
     var padreId : Int = 0
@@ -12,7 +12,7 @@ class IngresarLibroActivity : AppCompatActivity() {
     var equipoRespaldo : Autor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingresar_jugador)
+        setContentView(R.layout.activity_ingresar_libro)
         usuario = intent.getStringExtra("usuario").toString()
         equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
         padreId = intent.getIntExtra("padreId", -1)
