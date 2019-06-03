@@ -7,8 +7,8 @@ class Libro(var id:Int?,
             var ICBN:Int,
             var nombreLibro:String,
             var numeroPaginas:Int,
-            var editorial:Int,
-            var fechaNacimiento:String,
+            var editorial:String,
+            var fechaPublicacion:String,
             var numEdicion:Int,
             var autorId:Int): Parcelable {
     constructor(parcel: Parcel) : this(
@@ -16,7 +16,7 @@ class Libro(var id:Int?,
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
-        parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
         parcel.readInt()
@@ -24,7 +24,8 @@ class Libro(var id:Int?,
     }
 
     override fun toString(): String {
-        return "Número Camiseta: ${ICBN} Nombre Libro: ${numeroPaginas} Poder: ${editorial} Fecha Ingreso:${fechaNacimiento} Goles:${numEdicion}"
+        return "ICBN: ${ICBN} Nombre Libro: ${nombreLibro} Numero Paginas: ${numeroPaginas} Editorial: ${editorial} " +
+                "Fecha Publicacion:${fechaPublicacion} Numero Edicion:${numEdicion}"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -32,8 +33,8 @@ class Libro(var id:Int?,
         parcel.writeInt(ICBN)
         parcel.writeString(nombreLibro)
         parcel.writeInt(numeroPaginas)
-        parcel.writeInt(editorial)
-        parcel.writeString(fechaNacimiento)
+        parcel.writeString(editorial)
+        parcel.writeString(fechaPublicacion)
         parcel.writeInt(numEdicion)
         parcel.writeInt(autorId)
     }

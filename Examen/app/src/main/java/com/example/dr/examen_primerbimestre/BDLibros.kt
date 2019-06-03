@@ -5,7 +5,7 @@ class BDLibros {
         val LST_LIBRO:ArrayList<Libro> = ArrayList();
         var serial:Int= 1;
 
-        fun agregarJugador(libro: Libro):ArrayList<Libro>{
+        fun agregarLibro(libro: Libro):ArrayList<Libro>{
             libro.id = serial
             serial++
             LST_LIBRO.add(libro)

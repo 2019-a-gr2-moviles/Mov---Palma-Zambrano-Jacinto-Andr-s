@@ -9,30 +9,30 @@ import kotlinx.android.synthetic.main.activity_ingresar_libro.*
 class IngresarLibroActivity : AppCompatActivity() {
     var padreId : Int = 0
     var usuario :String = "";
-    var equipoRespaldo : Autor? = null
+    var autorRespaldo : Autor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingresar_libro)
         usuario = intent.getStringExtra("usuario").toString()
-        equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
+        autorRespaldo = intent.getParcelableExtra<Autor>("AutorRespaldo")
         padreId = intent.getIntExtra("padreId", -1)
-        btnGuardar.setOnClickListener { guardarJugador() }
+        btnGuardar.setOnClickListener { guardarLibro() }
     }
 
-    fun guardarJugador(){
-        val jugador = Libro(id = null,
+    fun guardarLibro(){
+        val libro = Libro(id = null,
             ICBN = txtICBN.text.toString().toInt(),
             nombreLibro = txtNombreLibro.text.toString(),
-            numeroPaginas = txtEditorial.text.toString(),
-            editorial = txtnumEdicion.text.toString(),
-            fechaNacimiento = txtfechaPublicacion.text.toString(),
-            numEdicion = txtNumPaginas.text.toString().toInt(),
+            numeroPaginas = txtNumPaginas.text.toString().toInt(),
+            editorial = txtEditorial.text.toString(),
+            fechaPublicacion = txtfechaPublicacion.text.toString(),
+            numEdicion = txtnumEdicion.text.toString().toInt(),
             autorId = padreId)
-        BDLibros.agregarJugador(jugador)
+        BDLibros.agregarLibro(libro)
         Toast.makeText(this, "Libro creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarAutorActivity::class.java)
         retorno.putExtra("usuario", usuario)
-        retorno.putExtra("Equipo", equipoRespaldo)
+        retorno.putExtra("Equipo", autorRespaldo)
         startActivity(retorno)
     }
 }
