@@ -23,7 +23,7 @@ class ConsultarAutorActivity : AppCompatActivity() {
 
             val equipoSeleccionada = parent.getItemAtPosition(position) as Autor
             val intentEquipoSeleccionada = Intent(this, ActualizarAutorActivity::class.java)
-            intentEquipoSeleccionada.putExtra("Equipo", equipoSeleccionada)
+            intentEquipoSeleccionada.putExtra("Autor", equipoSeleccionada)
             intentEquipoSeleccionada.putExtra("usuario", usuario)
             startActivity(intentEquipoSeleccionada)
         }

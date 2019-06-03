@@ -16,7 +16,7 @@ class ActualizarLibroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_actualizar_libro)
         usuario = intent.getStringExtra("usuario").toString()
         val libroRecibido = intent.getParcelableExtra<Libro>("Libro")
-        autorRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
+        autorRespaldo = intent.getParcelableExtra<Autor>("AutorRespaldo")
         txtICBN.setText(libroRecibido.ICBN.toString())
         txtNombreLibro.setText(libroRecibido.nombreLibro.toString())
         txtEditorial.setText(libroRecibido.numeroPaginas.toString())
@@ -25,8 +25,8 @@ class ActualizarLibroActivity : AppCompatActivity() {
         txtNumPaginas.setText(libroRecibido.numEdicion.toString())
         id = libroRecibido.id.toString().toInt()
         idPadre = libroRecibido.autorId.toString().toInt()
-        btnActualizarJugador.setOnClickListener { actualizarJugador() }
-        btnEliminarJugador.setOnClickListener { eliminarJugador() }
+        btnActualizarLibro.setOnClickListener { actualizarJugador() }
+        btnEliminarLibro.setOnClickListener { eliminarJugador() }
     }
 
     fun actualizarJugador(){
@@ -51,7 +51,7 @@ class ActualizarLibroActivity : AppCompatActivity() {
         Toast.makeText(this, "Eliminación libro exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarAutorActivity::class.java)
         retorno.putExtra("usuario", usuario)
-        retorno.putExtra("Equipo", autorRespaldo)
+        retorno.putExtra("Autor", autorRespaldo)
         startActivity(retorno)
     }
 }

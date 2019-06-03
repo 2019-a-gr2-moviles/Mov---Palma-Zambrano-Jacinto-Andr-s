@@ -27,12 +27,13 @@ class IngresarLibroActivity : AppCompatActivity() {
             editorial = txtEditorial.text.toString(),
             fechaPublicacion = txtfechaPublicacion.text.toString(),
             numEdicion = txtnumEdicion.text.toString().toInt(),
-            autorId = padreId)
+            autorId = padreId
+        )
         BDLibros.agregarLibro(libro)
         Toast.makeText(this, "Libro creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarAutorActivity::class.java)
         retorno.putExtra("usuario", usuario)
-        retorno.putExtra("Equipo", autorRespaldo)
+        retorno.putExtra("Autor", autorRespaldo)
         startActivity(retorno)
     }
 }

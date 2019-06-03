@@ -13,8 +13,8 @@ class ActualizarAutorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_autor)
         usuario = intent.getStringExtra("usuario").toString()
-        val autorRecibido = intent.getParcelableExtra<Autor>("Equipo")
-        txtNombres.setText(autorRecibido.nombres.toString())
+        val autorRecibido = intent.getParcelableExtra<Autor>("Autor")
+        txtNombres.setText(autorRecibido.nombres)
         txtApellidos.setText(autorRecibido.apellidos.toString())
         txtFechaNacimiento.setText(autorRecibido.fechaNacimiento.toString())
         numLibros.setText(autorRecibido.numeroLibros.toString())
@@ -61,7 +61,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
         val retorno = Intent(this, IngresarLibroActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("padreId", padreId)
-        retorno.putExtra("EquipoRespaldo", autorRespaldo)
+        retorno.putExtra("AutorRespaldo", autorRespaldo)
         startActivity(retorno)
     }
 
@@ -76,7 +76,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
         val retorno = Intent(this, ConsultarLibroActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("padreId", padreId)
-        retorno.putExtra("EquipoRespaldo", equipoRespaldo)
+        retorno.putExtra("AutorRespaldo", equipoRespaldo)
         startActivity(retorno)
     }
 

@@ -14,7 +14,7 @@ class ConsultarLibroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         usuario = intent.getStringExtra("usuario").toString()
-        equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
+        equipoRespaldo = intent.getParcelableExtra<Autor>("AutorRespaldo")
         padreId = intent.getIntExtra("padreId", -1)
         setContentView(R.layout.activity_consultar_libro)
         val adapter = ArrayAdapter<Libro>(
@@ -29,7 +29,7 @@ class ConsultarLibroActivity : AppCompatActivity() {
             val intentJugadorSeleccionado = Intent(this, ActualizarLibroActivity::class.java)
             intentJugadorSeleccionado.putExtra("usuario", usuario)
             intentJugadorSeleccionado.putExtra("Libro", jugadorSeleccionado)
-            intentJugadorSeleccionado.putExtra("EquipoRespaldo", equipoRespaldo)
+            intentJugadorSeleccionado.putExtra("AutorRespaldo", equipoRespaldo)
             startActivity(intentJugadorSeleccionado)
         }
     }
