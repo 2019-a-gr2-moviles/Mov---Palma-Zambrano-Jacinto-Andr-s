@@ -45,32 +45,43 @@
             app:layout_constraintStart_toStartOf="parent"/>
     <Button
             android:text="Eliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnEliminar" app:layout_constraintStart_toStartOf="@+id/txtCampeonAct"
-            app:layout_constraintEnd_toEndOf="@+id/txtCampeonAct" android:layout_marginTop="36dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtCampeonAct" app:layout_constraintHorizontal_bias="0.496"/>
+            android:layout_width="131dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnEliminar"
+            android:layout_marginTop="68dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtCampeonAct" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.125"/>
     <Button
             android:text="Actualizar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnActualizar" app:layout_constraintStart_toStartOf="@+id/btnEliminar"
-            app:layout_constraintEnd_toEndOf="@+id/btnEliminar" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnEliminar"/>
+            android:layout_width="131dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnActualizar"
+            app:layout_constraintStart_toEndOf="@+id/btnEliminar"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="68dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtCampeonAct" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.632"/>
     <Button
-            android:text="Crear Jugador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnCrearJugador" app:layout_constraintStart_toStartOf="@+id/btnActualizar"
-            app:layout_constraintEnd_toEndOf="@+id/btnActualizar" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnActualizar"/>
+            android:text="Crear Libro"
+            android:layout_width="131dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnCrearLibro"
+            android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnEliminar"
+            app:layout_constraintStart_toStartOf="@+id/btnEliminar"
+            app:layout_constraintEnd_toEndOf="@+id/btnEliminar" app:layout_constraintHorizontal_bias="0.0"/>
     <Button
-            android:text="Gestionar Jugador"
+            android:text="Gestionar Libros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGestionarJugador" app:layout_constraintStart_toStartOf="@+id/btnCrearJugador"
-            app:layout_constraintEnd_toEndOf="@+id/btnCrearJugador" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnCrearJugador"/>
+            android:id="@+id/btnGestionarLIbros"
+            android:layout_marginTop="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnActualizar"
+            app:layout_constraintStart_toEndOf="@+id/btnCrearLibro" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.703"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +95,10 @@
             android:text="Menú"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnMenuRetorno" app:layout_constraintStart_toStartOf="@+id/btnGestionarJugador"
-            app:layout_constraintEnd_toEndOf="@+id/btnGestionarJugador"
-            app:layout_constraintTop_toBottomOf="@+id/btnGestionarJugador"/>
+            android:id="@+id/btnMenuRetorno"
+            app:layout_constraintEnd_toEndOf="@+id/btnGestionarLIbros"
+            android:layout_marginEnd="128dp" android:layout_marginRight="128dp"
+            app:layout_constraintStart_toStartOf="@+id/btnCrearLibro" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.943"
+            android:layout_marginTop="592dp" app:layout_constraintTop_toTopOf="parent"/>
 </android.support.constraint.ConstraintLayout>

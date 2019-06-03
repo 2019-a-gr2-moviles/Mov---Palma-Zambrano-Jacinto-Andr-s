@@ -16,7 +16,7 @@ class ConsultarAutorActivity : AppCompatActivity() {
         val adapter = ArrayAdapter<Autor>(
             this,
             android.R.layout.simple_list_item_1,
-            BDAutores.mostrarEquipo()
+            BDAutores.mostrarAutor()
         )
         lstView.adapter = adapter;
         lstView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->

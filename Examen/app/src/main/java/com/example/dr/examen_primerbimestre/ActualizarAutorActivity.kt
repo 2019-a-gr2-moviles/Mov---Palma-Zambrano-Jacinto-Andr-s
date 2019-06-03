@@ -22,8 +22,8 @@ class ActualizarAutorActivity : AppCompatActivity() {
         padreId = equipoRecibida.id!!;
         btnActualizar.setOnClickListener { actualizarEquipo() }
         btnEliminar.setOnClickListener { eliminarEquipo() }
-        btnCrearJugador.setOnClickListener { crearJugador() }
-        btnGestionarJugador.setOnClickListener { gestionarJugador() }
+        btnCrearLibro.setOnClickListener { crearJugador() }
+        btnGestionarLIbros.setOnClickListener { gestionarJugador() }
         btnMenuRetorno.setOnClickListener { retorno() }
     }
 
@@ -35,7 +35,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
-        BDAutores.actualizarEquipo(actualizarEquipo)
+        BDAutores.actualizarAutor(actualizarEquipo)
         Toast.makeText(this, "Actualización exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
@@ -43,7 +43,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
     }
 
     fun eliminarEquipo(){
-        BDAutores.eliminarEquipo(padreId);
+        BDAutores.eliminarAutor(padreId);
         Toast.makeText(this, "Eliminación exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)

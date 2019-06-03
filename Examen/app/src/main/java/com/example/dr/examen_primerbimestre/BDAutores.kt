@@ -2,7 +2,7 @@ package com.example.mjg70.examen
 
 class BDAutores{
     companion object {
-        val LST_EQUIPO:ArrayList<Autor> = ArrayList();
+        val LST_AUTOR:ArrayList<Autor> = ArrayList();
         var serial:Int= 1;
         var nombreUsuario:String = "";
 
@@ -10,24 +10,24 @@ class BDAutores{
             this.nombreUsuario = nombre;
         }
 
-        fun agregarEquipo(equipo: Autor):ArrayList<Autor>{
-            equipo.id = serial
+        fun agregarAutor(autor: Autor):ArrayList<Autor>{
+            autor.id = serial
             serial++
-            LST_EQUIPO.add(equipo)
-            return LST_EQUIPO
+            LST_AUTOR.add(autor)
+            return LST_AUTOR
         }
 
-        fun mostrarEquipo(): List<Autor> {
-            return this.LST_EQUIPO
+        fun mostrarAutor(): List<Autor> {
+            return this.LST_AUTOR
         }
 
-        fun eliminarEquipo(id:Int){
-            this.LST_EQUIPO.removeAll{ it.id == id }
+        fun eliminarAutor(id:Int){
+            this.LST_AUTOR.removeAll{ it.id == id }
         }
 
-        fun actualizarEquipo(equipo: Autor){
-            val indice = this.LST_EQUIPO.indexOfFirst { it.id == equipo.id }
-            this.LST_EQUIPO[indice] = equipo
+        fun actualizarAutor(autor: Autor){
+            val indice = this.LST_AUTOR.indexOfFirst { it.id == autor.id }
+            this.LST_AUTOR[indice] = autor
         }
 
     }

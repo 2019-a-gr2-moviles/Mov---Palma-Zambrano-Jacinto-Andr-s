@@ -29,7 +29,7 @@ class IngresarAutorActivity : AppCompatActivity() {
             fechaNacimiento = txtFechaNacimiento.text.toString(),
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtEcuatoriano.text.toString())
-        BDAutores.agregarEquipo(autorNuevo)
+        BDAutores.agregarAutor(autorNuevo)
         Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
