@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtnumeroCamiseta" android:layout_marginTop="36dp"
+            android:id="@+id/txtICBN" android:layout_marginTop="36dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -21,48 +21,48 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreCamiseta" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtnumeroCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtnumeroCamiseta" app:layout_constraintStart_toStartOf="@+id/txtnumeroCamiseta"/>
+            android:id="@+id/txtNombreLibro" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtICBN"
+            app:layout_constraintEnd_toEndOf="@+id/txtICBN" app:layout_constraintStart_toStartOf="@+id/txtICBN"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreJugador" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreCamiseta" app:layout_constraintStart_toStartOf="@+id/txtNombreCamiseta"/>
+            android:id="@+id/txtEditorial" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreLibro"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreLibro" app:layout_constraintStart_toStartOf="@+id/txtNombreLibro"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtpoderEspecialDos"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador" app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador"/>
+            android:id="@+id/txtIdAutor"
+            app:layout_constraintEnd_toEndOf="@+id/txtEditorial" app:layout_constraintStart_toStartOf="@+id/txtEditorial"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtEditorial"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintEnd_toEndOf="@+id/txtpoderEspecialDos" app:layout_constraintStart_toStartOf="@+id/txtpoderEspecialDos"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtpoderEspecialDos"/>
+            android:id="@+id/txtfechaPublicacion"
+            app:layout_constraintEnd_toEndOf="@+id/txtIdAutor" app:layout_constraintStart_toStartOf="@+id/txtIdAutor"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtIdAutor"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtGoles"
-            app:layout_constraintEnd_toEndOf="@+id/txtfechaIngresoEquipo" app:layout_constraintStart_toStartOf="@+id/txtfechaIngresoEquipo"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtfechaIngresoEquipo"/>
+            android:id="@+id/txtNumPaginas"
+            app:layout_constraintEnd_toEndOf="@+id/txtfechaPublicacion" app:layout_constraintStart_toStartOf="@+id/txtfechaPublicacion"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtfechaPublicacion"/>
     <Button
             android:text="Actualizar Jugador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnActualizarJugador" app:layout_constraintStart_toStartOf="@+id/txtGoles"
-            app:layout_constraintEnd_toEndOf="@+id/txtGoles" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtGoles" app:layout_constraintHorizontal_bias="0.504"/>
+            android:id="@+id/btnActualizarJugador" app:layout_constraintStart_toStartOf="@+id/txtNumPaginas"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumPaginas" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumPaginas" app:layout_constraintHorizontal_bias="0.504"/>
     <Button
             android:text="Eliminar Jugador"
             android:layout_width="wrap_content"

@@ -12,62 +12,66 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreCamiseta"
-            app:layout_constraintStart_toStartOf="@+id/txtnumeroCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtnumeroCamiseta"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtnumeroCamiseta"
-            android:hint="Nombre Camiseta"/>
+            android:id="@+id/txtNombreLibro"
+            app:layout_constraintStart_toStartOf="@+id/txtICBN"
+            app:layout_constraintEnd_toEndOf="@+id/txtICBN"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtICBN"
+            android:hint="Nombre Libro"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreJugador"
-            app:layout_constraintStart_toStartOf="@+id/txtNombreCamiseta" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreCamiseta"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreCamiseta" android:hint="Nombre Jugador"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/txtpoderEspecialDos" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombreJugador"
-            app:layout_constraintStart_toStartOf="@+id/txtNombreJugador"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombreJugador" android:hint="Poder Especial"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintStart_toStartOf="@+id/txtpoderEspecialDos"
-            app:layout_constraintEnd_toEndOf="@+id/txtpoderEspecialDos"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtpoderEspecialDos"
-            android:hint="Fecha Ingreso Equipo"/>
+            android:id="@+id/txtEditorial"
+            android:hint="Editorial"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtfechaPublicacion"
+            app:layout_constraintEnd_toEndOf="@+id/txtfechaPublicacion"
+            app:layout_constraintStart_toStartOf="@+id/txtfechaPublicacion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtGoles" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintStart_toStartOf="@+id/txtfechaIngresoEquipo"
-            app:layout_constraintEnd_toEndOf="@+id/txtfechaIngresoEquipo" android:hint="Goles"/>
+            android:id="@+id/txtIdAutor" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtEditorial"
+            app:layout_constraintStart_toStartOf="@+id/txtEditorial"
+            app:layout_constraintEnd_toEndOf="@+id/txtEditorial" android:hint="Id Autor"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/txtfechaPublicacion"
+            android:hint="Fecha Publicacion"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtNumPaginas"
+            app:layout_constraintStart_toStartOf="@+id/txtNumPaginas"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumPaginas"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/txtnumeroCamiseta" android:layout_marginTop="124dp"
+            android:id="@+id/txtNumPaginas"
+            android:hint="Num Paginas" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreLibro"
+            app:layout_constraintStart_toStartOf="@+id/txtNombreLibro"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreLibro"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtICBN" android:layout_marginTop="124dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:hint="Número Camiseta"/>
+            app:layout_constraintStart_toStartOf="parent" android:hint="ICBN"/>
     <Button
             android:text="Guardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGuardar" app:layout_constraintStart_toStartOf="@+id/txtGoles"
-            app:layout_constraintEnd_toEndOf="@+id/txtGoles" android:layout_marginTop="36dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtGoles" app:layout_constraintHorizontal_bias="0.496"/>
+            android:id="@+id/btnGuardar"
+            android:layout_marginTop="84dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtIdAutor" app:layout_constraintStart_toStartOf="@+id/txtIdAutor"
+            app:layout_constraintEnd_toEndOf="@+id/txtIdAutor"/>
 </android.support.constraint.ConstraintLayout>

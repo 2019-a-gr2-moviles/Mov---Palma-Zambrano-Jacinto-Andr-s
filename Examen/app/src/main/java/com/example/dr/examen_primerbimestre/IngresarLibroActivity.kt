@@ -21,12 +21,12 @@ class IngresarLibroActivity : AppCompatActivity() {
 
     fun guardarJugador(){
         val jugador = Libro(id = null,
-            numeroCamiseta = txtnumeroCamiseta.text.toString().toInt(),
-            nombreCamiseta = txtNombreCamiseta.text.toString(),
-            nombreCompletoJugador = txtNombreJugador.text.toString(),
-            poderEspecialDos = txtpoderEspecialDos.text.toString(),
-            fechaIngresoEquipo = txtfechaIngresoEquipo.text.toString(),
-            goles = txtGoles.text.toString().toInt(),
+            numeroCamiseta = txtICBN.text.toString().toInt(),
+            nombreCamiseta = txtNombreLibro.text.toString(),
+            nombreCompletoJugador = txtEditorial.text.toString(),
+            poderEspecialDos = txtIdAutor.text.toString(),
+            fechaIngresoEquipo = txtfechaPublicacion.text.toString(),
+            goles = txtNumPaginas.text.toString().toInt(),
             equipoFutbolId = padreId)
         BDLibros.agregarJugador(jugador)
         Toast.makeText(this, "Libro creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()

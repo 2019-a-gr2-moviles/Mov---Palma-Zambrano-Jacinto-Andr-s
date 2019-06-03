@@ -13,36 +13,36 @@ class ActualizarAutorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_autor)
         usuario = intent.getStringExtra("usuario").toString()
-        val equipoRecibida = intent.getParcelableExtra<Autor>("Equipo")
-        txtNombres.setText(equipoRecibida.nombres.toString())
-        txtApellidos.setText(equipoRecibida.apellidos.toString())
-        txtFechaNacimiento.setText(equipoRecibida.fechaNacimiento.toString())
-        numLibros.setText(equipoRecibida.numeroLibros.toString())
-        txtCampeonAct.setText(equipoRecibida.ecuatoriano.toString())
-        padreId = equipoRecibida.id!!;
-        btnActualizar.setOnClickListener { actualizarEquipo() }
-        btnEliminar.setOnClickListener { eliminarEquipo() }
-        btnCrearLibro.setOnClickListener { crearJugador() }
+        val autorRecibido = intent.getParcelableExtra<Autor>("Equipo")
+        txtNombres.setText(autorRecibido.nombres.toString())
+        txtApellidos.setText(autorRecibido.apellidos.toString())
+        txtFechaNacimiento.setText(autorRecibido.fechaNacimiento.toString())
+        numLibros.setText(autorRecibido.numeroLibros.toString())
+        txtCampeonAct.setText(autorRecibido.ecuatoriano.toString())
+        padreId = autorRecibido.id!!;
+        btnActualizar.setOnClickListener { actualizarAutor() }
+        btnEliminar.setOnClickListener { eliminarAutor() }
+        btnCrearLibro.setOnClickListener { crearLibro() }
         btnGestionarLIbros.setOnClickListener { gestionarJugador() }
         btnMenuRetorno.setOnClickListener { retorno() }
     }
 
-    fun actualizarEquipo(){
-        val actualizarEquipo = Autor(id = padreId,
+    fun actualizarAutor(){
+        val actualizarAutor = Autor(id = padreId,
             nombres = txtNombres.text.toString(),
             apellidos = txtApellidos.text.toString(),
             fechaNacimiento = txtFechaNacimiento.text.toString(),
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
-        BDAutores.actualizarAutor(actualizarEquipo)
+        BDAutores.actualizarAutor(actualizarAutor)
         Toast.makeText(this, "Actualización exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)
     }
 
-    fun eliminarEquipo(){
+    fun eliminarAutor(){
         BDAutores.eliminarAutor(padreId);
         Toast.makeText(this, "Eliminación exitosa "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
@@ -50,8 +50,8 @@ class ActualizarAutorActivity : AppCompatActivity() {
         startActivity(retorno)
     }
 
-    fun crearJugador(){
-        val equipoRespaldo = Autor(id = padreId,
+    fun crearLibro(){
+        val autorRespaldo = Autor(id = padreId,
             nombres = txtNombres.text.toString(),
             apellidos = txtApellidos.text.toString(),
             fechaNacimiento = txtFechaNacimiento.text.toString(),
@@ -61,7 +61,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
         val retorno = Intent(this, IngresarLibroActivity::class.java)
         retorno.putExtra("usuario", usuario)
         retorno.putExtra("padreId", padreId)
-        retorno.putExtra("EquipoRespaldo", equipoRespaldo)
+        retorno.putExtra("EquipoRespaldo", autorRespaldo)
         startActivity(retorno)
     }
 

@@ -17,12 +17,12 @@ class ActualizarLibroActivity : AppCompatActivity() {
         usuario = intent.getStringExtra("usuario").toString()
         val jugadorRecibido = intent.getParcelableExtra<Libro>("Libro")
         equipoRespaldo = intent.getParcelableExtra<Autor>("EquipoRespaldo")
-        txtnumeroCamiseta.setText(jugadorRecibido.numeroCamiseta.toString())
-        txtNombreCamiseta.setText(jugadorRecibido.nombreCamiseta.toString())
-        txtNombreJugador.setText(jugadorRecibido.nombreCompletoJugador.toString())
-        txtpoderEspecialDos.setText(jugadorRecibido.poderEspecialDos.toString())
-        txtfechaIngresoEquipo.setText(jugadorRecibido.fechaIngresoEquipo.toString())
-        txtGoles.setText(jugadorRecibido.goles.toString())
+        txtICBN.setText(jugadorRecibido.numeroCamiseta.toString())
+        txtNombreLibro.setText(jugadorRecibido.nombreCamiseta.toString())
+        txtEditorial.setText(jugadorRecibido.nombreCompletoJugador.toString())
+        txtIdAutor.setText(jugadorRecibido.poderEspecialDos.toString())
+        txtfechaPublicacion.setText(jugadorRecibido.fechaIngresoEquipo.toString())
+        txtNumPaginas.setText(jugadorRecibido.goles.toString())
         id = jugadorRecibido.id.toString().toInt()
         idPadre = jugadorRecibido.equipoFutbolId.toString().toInt()
         btnActualizarJugador.setOnClickListener { actualizarJugador() }
@@ -31,12 +31,12 @@ class ActualizarLibroActivity : AppCompatActivity() {
 
     fun actualizarJugador(){
         val jugador = Libro(id = id,
-            numeroCamiseta = txtnumeroCamiseta.text.toString().toInt(),
-            nombreCamiseta = txtNombreCamiseta.text.toString(),
-            nombreCompletoJugador = txtNombreJugador.text.toString(),
-            poderEspecialDos = txtpoderEspecialDos.text.toString(),
-            fechaIngresoEquipo = txtfechaIngresoEquipo.text.toString(),
-            goles = txtGoles.text.toString().toInt(),
+            numeroCamiseta = txtICBN.text.toString().toInt(),
+            nombreCamiseta = txtNombreLibro.text.toString(),
+            nombreCompletoJugador = txtEditorial.text.toString(),
+            poderEspecialDos = txtIdAutor.text.toString(),
+            fechaIngresoEquipo = txtfechaPublicacion.text.toString(),
+            goles = txtNumPaginas.text.toString().toInt(),
             equipoFutbolId = idPadre)
         BDLibros.actualizarJugador(jugador)
         Toast.makeText(this, "Actualización jugador exitosa "+usuario, Toast.LENGTH_SHORT).show()
