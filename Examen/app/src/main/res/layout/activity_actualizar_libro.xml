@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtIdAutor"
+            android:id="@+id/txtnumEdicion"
             app:layout_constraintEnd_toEndOf="@+id/txtEditorial" app:layout_constraintStart_toStartOf="@+id/txtEditorial"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtEditorial"/>
     <EditText
@@ -46,8 +46,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/txtfechaPublicacion"
-            app:layout_constraintEnd_toEndOf="@+id/txtIdAutor" app:layout_constraintStart_toStartOf="@+id/txtIdAutor"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtIdAutor"/>
+            app:layout_constraintEnd_toEndOf="@+id/txtnumEdicion" app:layout_constraintStart_toStartOf="@+id/txtnumEdicion"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtnumEdicion"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

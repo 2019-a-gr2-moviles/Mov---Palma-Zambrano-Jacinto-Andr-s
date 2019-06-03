@@ -21,13 +21,13 @@ class IngresarLibroActivity : AppCompatActivity() {
 
     fun guardarJugador(){
         val jugador = Libro(id = null,
-            numeroCamiseta = txtICBN.text.toString().toInt(),
-            nombreCamiseta = txtNombreLibro.text.toString(),
-            nombreCompletoJugador = txtEditorial.text.toString(),
-            poderEspecialDos = txtIdAutor.text.toString(),
-            fechaIngresoEquipo = txtfechaPublicacion.text.toString(),
-            goles = txtNumPaginas.text.toString().toInt(),
-            equipoFutbolId = padreId)
+            ICBN = txtICBN.text.toString().toInt(),
+            nombreLibro = txtNombreLibro.text.toString(),
+            numeroPaginas = txtEditorial.text.toString(),
+            editorial = txtnumEdicion.text.toString(),
+            fechaNacimiento = txtfechaPublicacion.text.toString(),
+            numEdicion = txtNumPaginas.text.toString().toInt(),
+            autorId = padreId)
         BDLibros.agregarJugador(jugador)
         Toast.makeText(this, "Libro creado exitosamente "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, ActualizarAutorActivity::class.java)

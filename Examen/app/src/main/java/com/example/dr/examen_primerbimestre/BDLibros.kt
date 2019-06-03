@@ -13,7 +13,7 @@ class BDLibros {
         }
 
         fun mostrarJugador(padreId:Int): List<Libro> {
-            val lstFiltradaJugador = this.LST_LIBRO.filter { it.equipoFutbolId ==  padreId}
+            val lstFiltradaJugador = this.LST_LIBRO.filter { it.autorId ==  padreId}
             return lstFiltradaJugador
         }
 
