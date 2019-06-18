@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.dr.myapplication">
+          package="com.example.parcelable">
 
     <application
             android:allowBackup="true"
@@ -9,11 +9,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".Resultado">
+        </activity>
+        <activity android:name=".IntentRespuesta">
+        </activity>
         <activity android:name=".RecicleViewActivity">
-        </activity>
-        <activity android:name=".Usuario">
-        </activity>
-        <activity android:name=".Parcelabel">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
