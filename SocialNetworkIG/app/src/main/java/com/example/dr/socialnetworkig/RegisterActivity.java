@@ -1,6 +1,7 @@
 package com.example.dr.socialnetworkig;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,22 +56,38 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Please write your password....", Toast.LENGTH_SHORT).show();
         }else if(TextUtils.isEmpty(confirmPassword)){
             Toast.makeText(this, "Please confirm your password....", Toast.LENGTH_SHORT).show();
-        }else if(password!=confirmPassword){
+        }else if(!password.equals(confirmPassword)){
             Toast.makeText(this, "Your password does not match", Toast.LENGTH_SHORT).show();
         }else{
+            loadingBar.setTitle("Creating New Account");
+            loadingBar.setMessage("Please wait, whie we are creating your new Account");
+            loadingBar.show();
+            loadingBar.setCanceledOnTouchOutside(true);
+
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                            if(task.isSuccessful()){
+                               SendUserToSetupActivity();
                                Toast.makeText(RegisterActivity.this,"you are authenticated successfully...",Toast.LENGTH_SHORT).show();
+                               loadingBar.dismiss();
                            }else{
                                String message = task.getException().getMessage();
                                Toast.makeText(RegisterActivity.this,"Error occurred: "+ message,Toast.LENGTH_SHORT).show();
+                               loadingBar.dismiss();
                            }
                         }
                     });
 
         }
+    }
+
+    private void SendUserToSetupActivity() {
+        Intent setupIntent = new Intent(RegisterActivity.this,SetupActivity.class);
+        setupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(setupIntent);
+        finish();
+
     }
 }
