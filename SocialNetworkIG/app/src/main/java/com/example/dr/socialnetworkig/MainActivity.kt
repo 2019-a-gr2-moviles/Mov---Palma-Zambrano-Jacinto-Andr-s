@@ -1,5 +1,6 @@
 package com.example.dr.socialnetworkig
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
@@ -10,6 +11,8 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,11 +22,17 @@ class MainActivity : AppCompatActivity() {
     private val postList: RecyclerView? = null
     private var mToolbar: Toolbar? = null
     private var actionBarDrawerToggle: ActionBarDrawerToggle? = null
+    private var mAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Conexión con Firebase para la autenticación
+        mAuth = FirebaseAuth.getInstance()
+
+
+        //Toolbar que permite ver el titulo en la pantalla
         mToolbar = findViewById<View>(R.id.main_page_toolbar) as Toolbar
         setSupportActionBar(mToolbar)
         supportActionBar!!.title = "Home"
@@ -43,6 +52,23 @@ class MainActivity : AppCompatActivity() {
             false
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        //Revisa que el usuario esté registrado para poder acceder
+        val currentUser = mAuth!!.currentUser
+        if (currentUser == null) {
+            //usuario no autenticado
+            SendUserToLoginActivity()
+        }
+    }
+
+    private fun SendUserToLoginActivity() {
+        val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
+        loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(loginIntent)
+        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

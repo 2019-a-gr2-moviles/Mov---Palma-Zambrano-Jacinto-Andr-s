@@ -30,57 +30,58 @@
             android:layout_height="49dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/login_password" android:layout_alignParentBottom="true" android:layout_marginBottom="367dp"
+            android:id="@+id/login_password"
             android:background="@drawable/inputs" android:padding="10dp" android:drawableLeft="@drawable/password"
             android:hint="Password" android:layout_marginTop="40dp" android:layout_below="@+id/login_email"/>
 
     <Button
             android:text="Login"
             android:layout_width="310dp"
-            android:layout_height="wrap_content" android:id="@+id/login_button" android:layout_marginTop="-495dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="274dp"
+            android:layout_height="wrap_content" android:id="@+id/login_button" android:layout_marginTop="35dp"
             android:background="@drawable/button" android:padding="15dp"
-            android:layout_alignParentEnd="true" android:layout_marginEnd="54dp" android:layout_alignParentStart="true"
-            android:layout_marginStart="47dp" android:textSize="20sp" android:textAlignment="center"
-            android:textStyle="bold" android:textColor="@android:color/background_light"/>
+            android:layout_alignParentEnd="true" android:layout_marginEnd="50dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="51dp" android:textSize="20sp" android:textAlignment="center"
+            android:textStyle="bold" android:textColor="@android:color/background_light"
+            android:layout_below="@+id/login_password"/>
     <TextView
             android:text="Don't have an account?"
             android:layout_width="274dp"
-            android:layout_height="28dp" android:id="@+id/register_account_link" android:layout_alignParentBottom="true"
-            android:layout_marginBottom="225dp" android:layout_alignParentEnd="true" android:layout_marginEnd="70dp"
-            android:layout_alignParentStart="true" android:layout_marginStart="66dp" android:textAlignment="center"
-            android:textStyle="bold" android:textSize="20sp" android:textColor="@android:color/white"/>
+            android:layout_height="28dp" android:id="@+id/register_account_link"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="49dp"
+            android:layout_alignParentStart="true" android:layout_marginStart="87dp" android:textAlignment="center"
+            android:textStyle="bold" android:textSize="20sp" android:textColor="@android:color/white"
+            android:layout_marginTop="20dp" android:layout_below="@+id/login_button"
+    />
     <TextView
             android:text="or Login with"
             android:layout_width="92dp"
-            android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_alignParentBottom="true"
-            android:layout_marginBottom="189dp" android:layout_alignParentEnd="true" android:layout_marginEnd="162dp"
-            android:layout_alignParentStart="true" android:layout_marginStart="156dp"
-            android:textColor="@android:color/background_light"/>
-    
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="149dp"
+            android:layout_alignParentStart="true" android:layout_marginStart="169dp"
+            android:textColor="@android:color/background_light" android:layout_marginTop="19dp"
+            android:layout_below="@+id/register_account_link"/>
 
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
+    <ImageView
+            android:layout_width="67dp"
+            android:layout_height="60dp"
             android:src="@drawable/facebook"
-            android:layout_alignParentBottom="true" android:layout_marginBottom="81dp"
-            android:layout_alignParentEnd="true" android:layout_marginEnd="221dp" android:id="@+id/fb_signin_button"/>
+            android:layout_alignParentBottom="true" android:layout_marginBottom="84dp"
+            android:id="@+id/fb_signin_button"
+            android:layout_marginTop="45dp" android:layout_below="@+id/textView2" android:layout_alignParentStart="true"
+            android:layout_marginStart="85dp"/>
 
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
+    <ImageView
+            android:layout_width="65dp"
+            android:layout_height="61dp"
             android:src="@drawable/google"
-            android:layout_alignParentBottom="true" android:layout_marginBottom="81dp"
-            android:layout_alignParentEnd="true" android:layout_marginEnd="76dp"
-            android:id="@+id/google_signin_button"/>
+            android:layout_alignParentBottom="true" android:layout_marginBottom="83dp"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="94dp"
+            android:id="@+id/google_signin_button" android:layout_marginTop="45dp"
+            android:layout_below="@+id/textView2" android:layout_toEndOf="@+id/fb_signin_button"
+            android:layout_marginStart="100dp"/>
 
-    </LinearLayout>
+
 
 </RelativeLayout>
