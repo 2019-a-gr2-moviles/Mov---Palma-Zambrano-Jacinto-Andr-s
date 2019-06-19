@@ -29,5 +29,14 @@ class ConsultarAutorActivity : AppCompatActivity() {
         }
 
 
+
+
+    }
+
+    override fun onBackPressed() {
+
+        val intentMenu = Intent(this, MenuActivity::class.java)
+        intentMenu.putExtra("usuario", usuario)
+        startActivity(intentMenu)
     }
 }

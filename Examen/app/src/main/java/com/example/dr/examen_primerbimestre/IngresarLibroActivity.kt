@@ -36,4 +36,14 @@ class IngresarLibroActivity : AppCompatActivity() {
         retorno.putExtra("Autor", autorRespaldo)
         startActivity(retorno)
     }
+
+    override fun onBackPressed() {
+
+        val intentMenu = Intent(this, ActualizarAutorActivity::class.java)
+        intentMenu.putExtra("usuario", usuario)
+
+        intentMenu.putExtra("Autor", autorRespaldo)
+
+        startActivity(intentMenu)
+    }
 }

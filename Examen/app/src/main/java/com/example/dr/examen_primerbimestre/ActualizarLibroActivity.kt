@@ -54,4 +54,14 @@ class ActualizarLibroActivity : AppCompatActivity() {
         retorno.putExtra("Autor", autorRespaldo)
         startActivity(retorno)
     }
+
+    override fun onBackPressed() {
+
+
+        val intentMenu = Intent(this, ConsultarLibroActivity::class.java)
+        intentMenu.putExtra("usuario", usuario)
+        intentMenu.putExtra("padreId", idPadre)
+        intentMenu.putExtra("AutorRespaldo", autorRespaldo)
+        startActivity(intentMenu)
+    }
 }

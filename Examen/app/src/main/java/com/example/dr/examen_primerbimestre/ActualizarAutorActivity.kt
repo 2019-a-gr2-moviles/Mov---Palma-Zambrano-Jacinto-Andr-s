@@ -85,4 +85,11 @@ class ActualizarAutorActivity : AppCompatActivity() {
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)
     }
+
+    override fun onBackPressed() {
+
+        val intentMenu = Intent(this, ConsultarAutorActivity::class.java)
+        intentMenu.putExtra("usuario", usuario)
+        startActivity(intentMenu)
+    }
 }

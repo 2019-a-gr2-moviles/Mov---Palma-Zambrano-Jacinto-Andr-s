@@ -26,4 +26,10 @@ class MenuActivity : AppCompatActivity() {
         intentCrearEquipo.putExtra("usuario", usuario)
         startActivity(intentCrearEquipo)
     }
+
+    override fun onBackPressed() {
+        val intentMenu = Intent(this, MainActivity::class.java)
+
+        startActivity(intentMenu)
+    }
 }
