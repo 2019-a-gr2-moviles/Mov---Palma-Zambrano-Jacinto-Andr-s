@@ -30,6 +30,7 @@ import java.util.Set;
      private ProgressDialog loadingBar;
 
      String currentUserID;
+     final static int Gallery_pick =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,17 @@ import java.util.Set;
             @Override
             public void onClick(View v) {
                 SaveAccountSetupInformation();
+            }
+        });
+
+        ProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent,Gallery_pick);
+
             }
         });
 
