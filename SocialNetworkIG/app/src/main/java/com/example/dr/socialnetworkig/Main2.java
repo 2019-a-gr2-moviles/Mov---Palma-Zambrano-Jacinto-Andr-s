@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.*;
 
 
 public class Main2 extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class Main2 extends AppCompatActivity {
     private Toolbar mToolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private FirebaseAuth mAuth;
+    private DatabaseReference userRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,6 +35,9 @@ public class Main2 extends AppCompatActivity {
 
         //Conexión con Firebase para la autenticación
         mAuth = FirebaseAuth.getInstance();
+
+        //Referencia del ID del usuario dentro de la base de datos
+        userRef = (FirebaseDatabase.getInstance().getReference().child("Users"));
 
 
         //Toolbar que permite ver el titulo en la pantalla
@@ -68,7 +73,35 @@ public class Main2 extends AppCompatActivity {
         if(currentUser == null){
             //usuario no autenticado
           SendUserToLoginActivity();
+        }else{
+            CheckUserExistence();
         }
+
+    }
+
+    private void CheckUserExistence() {
+        final String current_user_id = mAuth.getCurrentUser().getUid();
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!dataSnapshot.hasChild(current_user_id)){
+                    SendUserToSetupActivity();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void SendUserToSetupActivity() {
+        Intent setupIntent = new Intent(Main2.this, SetupActivity.class);
+        setupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(setupIntent);
+        finish();
     }
 
     private void SendUserToLoginActivity() {
@@ -107,7 +140,9 @@ public class Main2 extends AppCompatActivity {
                 Toast.makeText(this,"Settings",Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_logout:
-                Toast.makeText(this,"Logout",Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"Logout",Toast.LENGTH_LONG).show();
+                mAuth.signOut();
+                SendUserToLoginActivity();
                 break;
         }
     }
