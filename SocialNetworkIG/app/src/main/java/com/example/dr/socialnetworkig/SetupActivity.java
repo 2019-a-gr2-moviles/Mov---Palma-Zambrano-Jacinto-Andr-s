@@ -2,7 +2,9 @@
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,6 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import java.util.HashMap;
@@ -28,6 +35,7 @@ import java.util.Set;
     private FirebaseAuth mAuth;
     private DatabaseReference UserRef;
      private ProgressDialog loadingBar;
+     private StorageReference UserProfileImageRef;
 
      String currentUserID;
      final static int Gallery_pick =1;
@@ -40,6 +48,7 @@ import java.util.Set;
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         UserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        UserProfileImageRef = FirebaseStorage.getInstance().getReference().child("profile Images");
 
         UserName = (EditText) findViewById(R.id.setup_username);
         FullName = (EditText) findViewById(R.id.setup_full_name);
@@ -68,17 +77,72 @@ import java.util.Set;
 
     }
 
+     @Override
+     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+         super.onActivityResult(requestCode, resultCode, data);
+
+         if(requestCode==Gallery_pick && resultCode==RESULT_OK && data!=null){
+             Uri ImageUri = data.getData();
+             CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).setAspectRatio(1,1)
+                     .start(this);
+
+         }
+         if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+             CropImage.ActivityResult result = CropImage.getActivityResult(data);
+
+             if(resultCode==RESULT_OK){
+
+                 loadingBar.setTitle("Profile Image");
+                 loadingBar.setMessage("Please wait, while we are updating your profile image..");
+                 loadingBar.show();
+                 loadingBar.setCanceledOnTouchOutside(true);
+
+                 Uri resultUri = result.getUri();
+                 StorageReference filePath = UserProfileImageRef.child(currentUserID+".jpg");
+                 filePath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                     @Override
+                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                         if(task.isSuccessful()){
+                             Toast.makeText(SetupActivity.this,"Profile image stored successfully (Firabse storage)",Toast.LENGTH_SHORT).show();
+                             final String downloadURL = task.getResult().getMetadata().getPath().toString();
+                             UserRef.child("Profile Image").setValue(downloadURL).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                 @Override
+                                 public void onComplete(@NonNull Task<Void> task) {
+                                     if(task.isSuccessful()){
+                                         Intent selfIntent = new Intent(SetupActivity.this,SetupActivity.class);
+                                         startActivity(selfIntent);
+
+                                         Toast.makeText(SetupActivity.this,"Profile image stored successfully (Firebase database)",Toast.LENGTH_SHORT).show();
+                                         loadingBar.dismiss();
+
+                                     }else{
+                                         String message = task.getException().getMessage();
+                                         Toast.makeText(SetupActivity.this,"Error occurred: "+message,Toast.LENGTH_SHORT);
+                                         loadingBar.dismiss();
+                                     }
+                                 }
+                             });
+                         }
+                     }
+                 });
+             }else{
+                 Toast.makeText(this,"Error ocurred: Image can´t be cropped try again",Toast.LENGTH_SHORT).show();
+                 loadingBar.dismiss();
+             }
+         }
+     }
+
      private void SaveAccountSetupInformation() {
         String username = UserName.getText().toString();
          String fullname = FullName.getText().toString();
          String country = CountryName.getText().toString();
 
          if(TextUtils.isEmpty(username)){
-             Toast.makeText(this,"Please write your Username...",Toast.LENGTH_SHORT);
+             Toast.makeText(this,"Please write your Username...",Toast.LENGTH_SHORT).show();
          }if(TextUtils.isEmpty(fullname)){
-             Toast.makeText(this,"Please write your Full Name...",Toast.LENGTH_SHORT);
+             Toast.makeText(this,"Please write your Full Name...",Toast.LENGTH_SHORT).show();
          }if(TextUtils.isEmpty(country)){
-             Toast.makeText(this,"Please write your country...",Toast.LENGTH_SHORT);
+             Toast.makeText(this,"Please write your country...",Toast.LENGTH_SHORT).show();
          }else{
 
              loadingBar.setTitle("Saving information");
