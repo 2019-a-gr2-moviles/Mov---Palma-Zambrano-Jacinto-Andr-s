@@ -15,7 +15,7 @@
         </activity>
         <activity android:name=".RegisterActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
