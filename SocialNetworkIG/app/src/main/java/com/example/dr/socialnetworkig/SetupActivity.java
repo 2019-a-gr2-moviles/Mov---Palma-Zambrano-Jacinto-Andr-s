@@ -1,4 +1,4 @@
- package com.example.dr.socialnetworkig;
+package com.example.dr.socialnetworkig;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+ import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -83,10 +85,10 @@ import java.util.Set;
 
          if(requestCode==Gallery_pick && resultCode==RESULT_OK && data!=null){
              Uri ImageUri = data.getData();
-             CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).setAspectRatio(1,1)
-                     .start(this);
+              CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).setAspectRatio(1,1).start(this);
 
          }
+
          if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
              CropImage.ActivityResult result = CropImage.getActivityResult(data);
 
@@ -130,6 +132,7 @@ import java.util.Set;
                  loadingBar.dismiss();
              }
          }
+
      }
 
      private void SaveAccountSetupInformation() {
