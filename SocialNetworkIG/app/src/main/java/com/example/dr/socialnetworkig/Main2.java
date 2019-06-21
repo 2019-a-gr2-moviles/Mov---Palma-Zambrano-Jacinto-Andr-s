@@ -112,7 +112,7 @@ public class Main2 extends AppCompatActivity {
 
     private void SendUserToPostActivity() {
         Intent addNewPostIntent = new Intent(Main2.this, PostActivity.class);
-        //addNewPostIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        addNewPostIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(addNewPostIntent);
         finish();
     }
