@@ -81,10 +81,10 @@ import java.util.Set;
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String image = dataSnapshot.child("Profile Image").getValue().toString();
+                    String image = dataSnapshot.child("profileimage").getValue().toString();
 
                     Picasso.with(SetupActivity.this).load(image).placeholder(R.drawable.profile).into(ProfileImage);
-                    
+
                 }
             }
 
