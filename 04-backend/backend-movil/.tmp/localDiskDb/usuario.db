@@ -1,6 +1,4 @@
 {"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
-{"nombre":"Jacinto","cedula":"1315081685","username":"JXC","createdAt":1561062008749,"updatedAt":1561062008749,"id":1,"_id":1}
-{"nombre":"Jacinto","cedula":"1234567890","username":"JXC","createdAt":1561062060936,"updatedAt":1561062060936,"id":2,"_id":2}
-{"$$deleted":true,"_id":2}
-{"nombre":"Jacinto A","cedula":"1234567890","username":"JXC","createdAt":1561062060936,"updatedAt":1561062582164,"id":2,"sueldo":"600","_id":2}
-{"$$deleted":true,"_id":1}
+{"$$indexCreated":{"fieldName":"cedula","unique":true,"sparse":false}}
+{"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
+{"createdAt":1561062060936,"updatedAt":1561062582164,"id":2,"nombre":"Jacinto A","cedula":"1234567890","username":"JXC","sueldo":600,"nombreAtributo":"","fechaNacimiento":"","estaCasado":false,"latitudCasa":"","longitudCasa":"","tipoUsuario":"","correo":"","_id":2}
