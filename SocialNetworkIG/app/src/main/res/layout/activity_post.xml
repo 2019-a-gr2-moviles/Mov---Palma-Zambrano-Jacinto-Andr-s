@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PostActivity"
+    android:background="@drawable/login">
+
+    <include
+            android:id="@+id/update_post_page_toolbar"
+            layout="@layout/app_bar_layout" android:layout_height="wrap_content"
+            android:layout_width="match_parent"></include>
+    <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="281dp" app:srcCompat="@drawable/select_image" android:id="@+id/iselect_post_image"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="57dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="92dp"
+            android:layout_below="@+id/update_post_page_toolbar" android:scaleType="fitCenter"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:inputType="textMultiLine"
+            android:gravity="start|top"
+            android:ems="10"
+            android:background="@drawable/inputs"
+            android:id="@+id/post_description" android:layout_alignParentEnd="true" android:layout_marginEnd="0dp"
+            android:layout_marginTop="59dp" android:layout_below="@+id/iselect_post_image"
+            android:layout_alignParentStart="true" android:layout_marginStart="0dp"
+            android:hint="Write something about your post" android:paddingLeft="10dp" android:paddingTop="10dp"/>
+    <Button
+            android:text="UPDATE POST"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content" android:id="@+id/update_post_button" android:layout_alignParentEnd="true"
+            android:layout_marginEnd="110dp" android:layout_alignParentStart="true" android:layout_marginStart="109dp"
+            android:background="@drawable/button"
+            android:layout_marginTop="39dp" android:layout_below="@+id/post_description" android:textAlignment="center"
+            android:textSize="18sp" android:textColor="@android:color/background_light"/>
+
+</RelativeLayout>
