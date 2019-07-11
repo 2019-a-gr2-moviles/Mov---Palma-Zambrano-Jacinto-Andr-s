@@ -1,5 +1,5 @@
 package com.example.parcelable
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +12,9 @@ import java.text.FieldPosition
 class AdaptadorPersona (
     private val listaPersonas: List<Persona>,
     private val contexto: RecicleViewActivity,
-    private val recyclerView: RecyclerView
-):RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
+): androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var nombreTextView:TextView
         var cedulaTextView:TextView
         var accionButton:Button

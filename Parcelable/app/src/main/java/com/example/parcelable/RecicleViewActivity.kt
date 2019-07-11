@@ -1,10 +1,10 @@
 package com.example.parcelable
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.AdapterViewAnimator
 import kotlinx.android.synthetic.main.activity_recicle_view.*
 
@@ -22,8 +22,8 @@ class RecicleViewActivity : AppCompatActivity() {
 
         val adaptadorPersona=AdaptadorPersona(lista, actividad, recyler_view)
         recyler_view.adapter=adaptadorPersona
-        rv_personas.itemAnimator=DefaultItemAnimator()
-        rv_personas.layoutManager=LinearLayoutManager(this)
+        rv_personas.itemAnimator= androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_personas.layoutManager= androidx.recyclerview.widget.LinearLayoutManager(this)
         adaptadorPersona.notifyDataSetChanged()
 
 
@@ -33,7 +33,7 @@ class RecicleViewActivity : AppCompatActivity() {
     fun iniciarRecylerView(
         lista: List<Persona>,
         actividad: RecicleViewActivity,
-        recycler_view: RecyclerView
+        recycler_view: androidx.recyclerview.widget.RecyclerView
     ) {
         val adaptadorPersona = AdaptadorPersona(
             lista,
@@ -41,8 +41,8 @@ class RecicleViewActivity : AppCompatActivity() {
             recycler_view
         )
         recycler_view.adapter = adaptadorPersona
-        recycler_view.itemAnimator = DefaultItemAnimator()
-        recycler_view.layoutManager = LinearLayoutManager(actividad)
+        recycler_view.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorPersona.notifyDataSetChanged()
     }

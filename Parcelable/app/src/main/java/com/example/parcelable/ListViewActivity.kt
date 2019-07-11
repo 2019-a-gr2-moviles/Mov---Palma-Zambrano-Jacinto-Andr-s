@@ -1,10 +1,10 @@
 package com.example.parcelable
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_list_view.*
 

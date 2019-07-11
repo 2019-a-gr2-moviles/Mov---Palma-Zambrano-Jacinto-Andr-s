@@ -2,7 +2,7 @@ package com.example.parcelable
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_intent_respuesta.*
 import kotlinx.android.synthetic.main.activity_resultado.*
