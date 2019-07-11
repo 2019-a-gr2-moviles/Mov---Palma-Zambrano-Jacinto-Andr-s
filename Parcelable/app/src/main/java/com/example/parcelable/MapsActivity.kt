@@ -86,6 +86,8 @@ GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener, GoogleMap.OnPoly
             LatLng(-0.209431, -78.488286),
             LatLng(-0.210085, -78.489745)
         ))
+
+        poligonoUno.fillColor = -0xc771c4
     }
     fun anadirMarcador(latLng: LatLng, title:String){
         mMap.addMarker(MarkerOptions().position(latLng).title(title))
