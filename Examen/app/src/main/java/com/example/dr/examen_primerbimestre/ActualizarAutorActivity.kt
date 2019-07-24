@@ -14,9 +14,9 @@ class ActualizarAutorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_actualizar_autor)
         usuario = intent.getStringExtra("usuario").toString()
         val autorRecibido = intent.getParcelableExtra<Autor>("Autor")
-        txtNombres.setText(autorRecibido.nombres)
-        txtApellidos.setText(autorRecibido.apellidos.toString())
-        txtFechaNacimiento.setText(autorRecibido.fechaNacimiento.toString())
+        txtNombreAutor.setText(autorRecibido.nombres)
+        txtApellidosAutor.setText(autorRecibido.apellidos.toString())
+        txtFechaNacimientoAutor.setText(autorRecibido.fechaNacimiento.toString())
         numLibros.setText(autorRecibido.numeroLibros.toString())
         txtCampeonAct.setText(autorRecibido.ecuatoriano.toString())
         padreId = autorRecibido.id!!;
@@ -29,9 +29,9 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun actualizarAutor(){
         val actualizarAutor = Autor(id = padreId,
-            nombres = txtNombres.text.toString(),
-            apellidos = txtApellidos.text.toString(),
-            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            nombres = txtNombreAutor.text.toString(),
+            apellidos = txtApellidosAutor.text.toString(),
+            fechaNacimiento = txtFechaNacimientoAutor.text.toString(),
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
@@ -52,9 +52,9 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun crearLibro(){
         val autorRespaldo = Autor(id = padreId,
-            nombres = txtNombres.text.toString(),
-            apellidos = txtApellidos.text.toString(),
-            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            nombres = txtNombreAutor.text.toString(),
+            apellidos = txtApellidosAutor.text.toString(),
+            fechaNacimiento = txtFechaNacimientoAutor.text.toString(),
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )
@@ -67,9 +67,9 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     fun gestionarJugador(){
         val equipoRespaldo = Autor(id = padreId,
-            nombres = txtNombres.text.toString(),
-            apellidos = txtApellidos.text.toString(),
-            fechaNacimiento = txtFechaNacimiento.text.toString(),
+            nombres = txtNombreAutor.text.toString(),
+            apellidos = txtApellidosAutor.text.toString(),
+            fechaNacimiento = txtFechaNacimientoAutor.text.toString(),
             numeroLibros = numLibros.text.toString().toInt(),
             ecuatoriano = txtCampeonAct.text.toString()
         )

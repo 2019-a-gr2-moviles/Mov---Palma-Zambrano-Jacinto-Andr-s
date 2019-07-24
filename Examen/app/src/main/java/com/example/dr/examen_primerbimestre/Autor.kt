@@ -4,13 +4,16 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class Autor(var id:Int?,
+class Autor(var id:String?,
             var nombres:String,
             var apellidos:String,
             var fechaNacimiento:String,
             var numeroLibros:Int,
-            var ecuatoriano:String) :Parcelable{
+            var ecuatoriano:String)
 
+
+//Parcelable{
+/*
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
@@ -47,5 +50,5 @@ class Autor(var id:Int?,
         override fun newArray(size: Int): Array<Autor?> {
             return arrayOfNulls(size)
         }
-    }
+    }*/
 }

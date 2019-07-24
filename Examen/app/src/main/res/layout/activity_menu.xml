@@ -5,23 +5,25 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MenuActivity">
+        tools:context=".MenuActivity" android:background="@color/colorPrimaryDark">
 
     <Button
             android:text="Autor"
-            android:layout_width="128dp"
-            android:layout_height="66dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:id="@+id/btnAutor" android:layout_marginTop="236dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.498"/>
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.498"
+            android:background="@drawable/button"/>
     <Button
             android:text="Nuevo Autor"
-            android:layout_width="128dp"
-            android:layout_height="66dp"
+            android:layout_width="153dp"
+            android:layout_height="52dp"
             android:id="@+id/btnCrearAutor" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/btnAutor" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.193"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="@+id/btnAutor"
-            app:layout_constraintStart_toStartOf="@+id/btnAutor" app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintStart_toStartOf="@+id/btnAutor" app:layout_constraintHorizontal_bias="0.0"
+            android:background="@drawable/button"/>
 </android.support.constraint.ConstraintLayout>

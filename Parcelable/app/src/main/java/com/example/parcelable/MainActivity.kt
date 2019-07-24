@@ -22,7 +22,24 @@ class MainActivity : AppCompatActivity() {
         btnMap.setOnClickListener {
             irAMapa()
         }
+        btn_CicloVida.setOnClickListener{
+            irACicloDeVida()
+        }
+        btnFragmentos.setOnClickListener{
+            irAFragmentos()
+        }
     }
+
+    private fun irAFragmentos() {
+        val intentExplicito= Intent(this, FragmentosActivity::class.java)
+        startActivity(intentExplicito)
+    }
+
+    private fun irACicloDeVida() {
+        val intentExplicito= Intent(this, CicloVidaActivity::class.java)
+        startActivity(intentExplicito)
+    }
+
     fun irARecyclerView(){
         val intentExplicito= Intent(this, RecicleViewActivity::class.java)
         startActivity(intentExplicito)

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "901089163640",
+    "firebase_url": "https://exameniibim.firebaseio.com",
+    "project_id": "exameniibim",
+    "storage_bucket": "exameniibim.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901089163640:android:6f1fa751706ba329",
+        "android_client_info": {
+          "package_name": "com.example.dr.jacinto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901089163640-bhpterku5g11avbsn2fsbuhhkjr8u5rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dr.jacinto",
+            "certificate_hash": "67a9365af3d20371b16e42e2588779ffc2cb70ff"
+          }
+        },
+        {
+          "client_id": "901089163640-fvupfp3b4101d5eps0jl4ploaq0957t3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqKV-UhLNwACbpnqhySeEJ7Wf6h6pFYeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901089163640-fvupfp3b4101d5eps0jl4ploaq0957t3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
