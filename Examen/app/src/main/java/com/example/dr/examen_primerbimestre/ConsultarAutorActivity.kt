@@ -1,5 +1,4 @@
-package com.example.mjg70.examen
-
+package com.example.dr.examen_primerbimestre
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView

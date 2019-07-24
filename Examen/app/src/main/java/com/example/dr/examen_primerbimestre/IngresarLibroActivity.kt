@@ -1,6 +1,4 @@
-package com.example.mjg70.examen
-
-import android.content.Intent
+package com.example.dr.examen_primerbimestre
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

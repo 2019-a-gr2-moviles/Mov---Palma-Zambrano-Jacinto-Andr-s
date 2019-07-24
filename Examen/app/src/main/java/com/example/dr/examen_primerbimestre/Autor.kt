@@ -1,7 +1,4 @@
-package com.example.mjg70.examen
-
-import android.os.Parcel
-import android.os.Parcelable
+package com.example.dr.examen_primerbimestre
 
 
 class Autor(val id:String,

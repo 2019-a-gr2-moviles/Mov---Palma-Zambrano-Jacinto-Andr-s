@@ -1,4 +1,4 @@
-package com.example.mjg70.examen
+package com.example.dr.examen_primerbimestre
 
 class BDLibros {
     companion object {

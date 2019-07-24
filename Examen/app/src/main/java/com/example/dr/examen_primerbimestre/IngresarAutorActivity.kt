@@ -1,10 +1,11 @@
-package com.example.mjg70.examen
+package com.example.dr.examen_primerbimestre
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dr.examen_primerbimestre.MenuActivity
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_ingresar_autor.*
 

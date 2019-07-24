@@ -1,4 +1,4 @@
-package com.example.mjg70.examen
+package com.example.dr.examen_primerbimestre
 
 import android.content.Intent
 import android.os.Bundle
@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         if(TextUtils.isEmpty(nombreUsuario)){
             Toast.makeText(this,"Debe de ingresar un nombre de usuario",Toast.LENGTH_LONG).show()
         }else{
-            Toast.makeText(this,"Bienvenido/a: ${nombreUsuario}",Toast.LENGTH_LONG).show()
-          //  BDAutores.guardarUsuario(txtNombreAutor.text.toString())
+            //  BDAutores.guardarUsuario(txtNombreAutor.text.toString())
             val intentMenu = Intent(this, MenuActivity::class.java)
             intentMenu.putExtra("usuario", txtNombreAutor.text.toString())
             startActivity(intentMenu)
+            Toast.makeText(this,"Bienvenido/a: ${nombreUsuario}",Toast.LENGTH_LONG).show()
         }
 
     }
