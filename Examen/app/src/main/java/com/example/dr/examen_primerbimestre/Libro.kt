@@ -10,7 +10,9 @@ class Libro(var id:Int?,
             var editorial:String,
             var fechaPublicacion:String,
             var numEdicion:Int,
-            var autorId:Int): Parcelable {
+            var autorId:Int)
+
+    /*: Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readInt(),
@@ -52,4 +54,4 @@ class Libro(var id:Int?,
             return arrayOfNulls(size)
         }
     }
-}
+}*/

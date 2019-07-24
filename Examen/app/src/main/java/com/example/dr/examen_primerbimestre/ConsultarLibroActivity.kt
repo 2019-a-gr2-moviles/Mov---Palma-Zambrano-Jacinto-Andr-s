@@ -1,14 +1,15 @@
 package com.example.mjg70.examen
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_consultar_libro.*
 
 class ConsultarLibroActivity : AppCompatActivity() {
-    var padreId : Int = 0
+   /*var padreId : Int = 0
     var usuario :String = "";
     var equipoRespaldo : Autor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,5 +33,5 @@ class ConsultarLibroActivity : AppCompatActivity() {
             intentJugadorSeleccionado.putExtra("AutorRespaldo", equipoRespaldo)
             startActivity(intentJugadorSeleccionado)
         }
-    }
+    }*/
 }

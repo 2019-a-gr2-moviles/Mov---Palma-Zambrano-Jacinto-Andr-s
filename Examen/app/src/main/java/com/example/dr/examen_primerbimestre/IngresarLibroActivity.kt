@@ -1,13 +1,13 @@
 package com.example.mjg70.examen
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_ingresar_libro.*
 
 class IngresarLibroActivity : AppCompatActivity() {
-    var padreId : Int = 0
+   /* var padreId : Int = 0
     var usuario :String = "";
     var autorRespaldo : Autor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,5 +45,5 @@ class IngresarLibroActivity : AppCompatActivity() {
         intentMenu.putExtra("Autor", autorRespaldo)
 
         startActivity(intentMenu)
-    }
+    }*/
 }

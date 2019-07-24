@@ -1,13 +1,13 @@
 package com.example.mjg70.examen
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_actualizar_libro.*
 
 class ActualizarLibroActivity : AppCompatActivity() {
-    var id :Int = 0;
+    /*var id :Int = 0;
     var idPadre :Int = 0
     var usuario :String = "";
     var autorRespaldo : Autor? = null
@@ -63,5 +63,5 @@ class ActualizarLibroActivity : AppCompatActivity() {
         intentMenu.putExtra("padreId", idPadre)
         intentMenu.putExtra("AutorRespaldo", autorRespaldo)
         startActivity(intentMenu)
-    }
+    }*/
 }

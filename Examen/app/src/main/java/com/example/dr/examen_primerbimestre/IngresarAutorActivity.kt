@@ -1,16 +1,15 @@
 package com.example.mjg70.examen
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_ingresar_autor.*
 
 class IngresarAutorActivity : AppCompatActivity() {
     var usuario:String = ""
-    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,24 +30,40 @@ class IngresarAutorActivity : AppCompatActivity() {
     }
 
     fun aceptarIngreso(){
-        val id = null
+
         val   nombres = txtNombreAutor.text.toString().trim()
         val  apellidos = txtApellidosAutor.text.toString().trim()
         val  fechaNacimiento = txtFechaNacimientoAutor.text.toString().trim()
         val   numeroLibros = numLibros.text.toString().toInt()
         val   ecuatoriano = txtEcuatoriano.text.toString().trim()
 
-        if(TextUtils.isEmpty(nombres) || TextUtils.isEmpty(apellidos) || TextUtils.isEmpty(fechaNacimiento) ){
-            txtNombreAutor.error = "Ingrese el nombre del autor"
+        if(TextUtils.isEmpty(nombres) ){
+                txtNombreAutor.error = "Ingrese el nombre del autor"
+                return
         }
 
+        if (TextUtils.isEmpty(apellidos)){
+              txtApellidosAutor.error = "Ingrese el apellido del autor"
+            return
+          }
 
+        if(TextUtils.isEmpty(fechaNacimiento) ) {
+            txtFechaNacimientoAutor.error = "Ingrese la fecha de nacimiento del autor"
+            return
+        }
 
+        val referenceData = FirebaseDatabase.getInstance().getReference("Autores")
+        val Autorid = referenceData.push().key
+        if(Autorid!=null){
+            val autorNuevo = Autor(Autorid,nombres,apellidos,fechaNacimiento,numeroLibros, ecuatoriano)
+            referenceData.child(Autorid).setValue(autorNuevo).addOnCompleteListener{
+                Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
+            }
 
+        }else{
+            Toast.makeText(this, "Valor de ID nulo ", Toast.LENGTH_SHORT).show()
+        }
 
-
-       // BDAutores.agregarAutor(autorNuevo)
-        Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
         val retorno = Intent(this, MenuActivity::class.java)
         retorno.putExtra("usuario", usuario)
         startActivity(retorno)
@@ -56,11 +71,7 @@ class IngresarAutorActivity : AppCompatActivity() {
 
 
 
-    companion object {
 
-        private const val TAG = "NewPostActivity"
-        private const val REQUIRED = "Required"
-    }
 
     override fun onBackPressed() {
 
