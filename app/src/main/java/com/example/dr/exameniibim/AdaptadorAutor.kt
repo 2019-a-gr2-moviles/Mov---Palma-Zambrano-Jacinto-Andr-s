@@ -14,7 +14,7 @@ class AdaptadorAutor(val mCtx: Context, val layoutActual: Int, val listaAutores:
        val layoutInflater:LayoutInflater = LayoutInflater.from(mCtx)
         val view: View = layoutInflater.inflate(layoutActual,null)
 
-        val textView = view.findViewById<TextView>(R.id.txtViewNombre)
+        val textView = view.findViewById<TextView>(R.id.txtDatosAutor)
 
         val autorx = listaAutores[position]
         val stringAutor = "Nombres: ${autorx.nombres}  " + "Apellidos: ${autorx.apellidos}  " +

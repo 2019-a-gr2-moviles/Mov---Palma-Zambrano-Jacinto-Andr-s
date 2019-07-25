@@ -57,9 +57,20 @@ class ActualizarAutorActivity : AppCompatActivity() {
             crearLibro()
         }
 
+        btnGestionarLibros.setOnClickListener {
+            consultarLibros()
+        }
+
     }
 
-    fun crearLibro() {
+    private fun consultarLibros() {
+        val intentConsultarLibro = Intent(this, ConsultarLibroActivity::class.java)
+        intentConsultarLibro.putExtra("usuario", usuario)
+        intentConsultarLibro.putExtra("id", id)
+        startActivity(intentConsultarLibro)
+    }
+
+    private fun crearLibro() {
         val intentCrearLibro = Intent(this, IngresarLibroActivity::class.java)
         intentCrearLibro.putExtra("usuario", usuario)
         intentCrearLibro.putExtra("id", id)

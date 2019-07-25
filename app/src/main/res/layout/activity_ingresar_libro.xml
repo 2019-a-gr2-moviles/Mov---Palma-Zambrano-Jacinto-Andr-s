@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtLatitud"
+            android:id="@+id/txtLongitud"
             android:hint="Latitud"
             android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/txtnumEdicion"
             app:layout_constraintEnd_toEndOf="@+id/txtnumEdicion"
@@ -34,8 +34,8 @@
             android:ems="10"
             android:id="@+id/txtLongitud"
             android:hint="Longitud"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtLatitud"
-            app:layout_constraintEnd_toEndOf="@+id/txtLatitud" app:layout_constraintStart_toStartOf="@+id/txtLatitud"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/txtLongitud"
+            app:layout_constraintEnd_toEndOf="@+id/txtLongitud" app:layout_constraintStart_toStartOf="@+id/txtLongitud"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

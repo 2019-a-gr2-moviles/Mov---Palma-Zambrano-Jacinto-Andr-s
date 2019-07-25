@@ -3,10 +3,8 @@ package com.example.dr.exameniibim
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_actualizar_autor.*
 import kotlinx.android.synthetic.main.activity_ingresar_libro.*
 
 class IngresarLibroActivity : AppCompatActivity() {
@@ -34,7 +32,7 @@ class IngresarLibroActivity : AppCompatActivity() {
             val   fechaPublicacion = txtfechaPublicacion.text.toString()
             val   editorial = txtEditorial.text.toString().trim()
             val edicion = txtnumEdicion.text.toString().toInt()
-            val latitud = txtLatitud.text.toString().toFloat()
+            val latitud = txtLongitud.text.toString().toFloat()
             val longitud = txtLongitud.text.toString().toFloat()
 
             val Autorid = id
