@@ -31,7 +31,7 @@ class ActualizarLibroActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()) {
 
-                        val libro = p0.child(id)
+                    for (libro in p0.children) {
                         val lib = libro.getValue(Libro::class.java)
                         if(lib!!.idLibro == idLibro){
                             txtICBN.setText(lib.icbn)
@@ -40,12 +40,11 @@ class ActualizarLibroActivity : AppCompatActivity() {
                             txtfechaPublicacion.setText(lib.fechaPublicacion)
                             txtNombreLibro.setText(lib.nombreLibro)
                             txtNumPaginas.setText(lib.numeroPaginas)
-
                             //txtLatitud.setText(lib.latitud.toString())
                             //txtLongitud.setText(lib.longitud.toString())
 
                         }
-
+                    }
                 }
             }
         })
