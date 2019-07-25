@@ -18,7 +18,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar_autor)
 
-
+        usuario = intent.getStringExtra("usuario").toString()
         id = intent.getStringExtra("id").toString()
         ref = FirebaseDatabase.getInstance().getReference("Autores")
 
@@ -49,6 +49,32 @@ class ActualizarAutorActivity : AppCompatActivity() {
             actualizarAutor()
         }
 
+        btnEliminar.setOnClickListener {
+            eliminarAutor()
+        }
+
+        btnCrearLibro.setOnClickListener {
+            crearLibro()
+        }
+
+    }
+
+    private fun crearLibro() {
+        val intentCrearLibro = Intent(this, IngresarLibroActivity::class.java)
+        intentCrearLibro.putExtra("usuario", usuario)
+        intentCrearLibro.putExtra("id", id)
+        startActivity(intentCrearLibro)
+        finish()
+    }
+
+    private fun eliminarAutor() {
+        val drAutor : DatabaseReference = FirebaseDatabase.getInstance().getReference("Autores").child(id)
+
+        drAutor.removeValue()
+        Toast.makeText(this,"${usuario} ha eliminado un Autor y su contenido",Toast.LENGTH_SHORT).show()
+        val retorno = Intent(this, ConsultarAutorActivity::class.java)
+        retorno.putExtra("usuario", usuario)
+        startActivity(retorno)
     }
 
     private fun actualizarAutor() {
@@ -78,7 +104,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
         if(Autorid!=null){
             val autorNuevo = Autor(Autorid,nombres,apellidos,fechaNacimiento,numeroLibros, ecuatoriano)
             referenceData.child(Autorid).setValue(autorNuevo).addOnCompleteListener{
-                Toast.makeText(this, "Ingreso exitoso "+usuario, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Actualización exitosa "+usuario, Toast.LENGTH_SHORT).show()
             }
 
         }else{

@@ -19,6 +19,7 @@ class ConsultarAutorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_consultar_autor)
+        usuario = intent.getStringExtra("usuario").toString()
 
         listView = findViewById(R.id.lstView)
         listaAutores = mutableListOf()
