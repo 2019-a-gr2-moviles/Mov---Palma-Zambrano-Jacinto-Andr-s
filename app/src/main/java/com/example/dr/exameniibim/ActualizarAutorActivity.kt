@@ -59,7 +59,7 @@ class ActualizarAutorActivity : AppCompatActivity() {
 
     }
 
-    private fun crearLibro() {
+    fun crearLibro() {
         val intentCrearLibro = Intent(this, IngresarLibroActivity::class.java)
         intentCrearLibro.putExtra("usuario", usuario)
         intentCrearLibro.putExtra("id", id)

@@ -10,18 +10,18 @@ import kotlinx.android.synthetic.main.activity_actualizar_autor.*
 import kotlinx.android.synthetic.main.activity_ingresar_libro.*
 
 class IngresarLibroActivity : AppCompatActivity() {
+    var usuario:String = ""
+    var id:String = ""
 
-    var usuario: String = ""
-    var id: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingresar_libro)
+         usuario = intent.getStringExtra("usuario")
+         id = intent.getStringExtra("id")
 
-        usuario = intent.getStringExtra("usuario").toString()
-        id = intent.getStringExtra("id").toString()
 
-        btnCrearLibro.setOnClickListener {
+        btnGuardar.setOnClickListener {
             crearLibro()
         }
     }
@@ -37,21 +37,6 @@ class IngresarLibroActivity : AppCompatActivity() {
             val latitud = txtLatitud.text.toString().toFloat()
             val longitud = txtLongitud.text.toString().toFloat()
 
-
-            /*if(TextUtils.isEmpty(nombres) ){
-                txtNombreAutor.error = "Ingrese el nombre del autor"
-                return
-            }
-
-            if (TextUtils.isEmpty(apellidos)){
-                txtApellidosAutor.error = "Ingrese el apellido del autor"
-                return
-            }
-
-            if(TextUtils.isEmpty(fechaNacimiento) ) {
-                txtFechaNacimientoAutor.error = "Ingrese la fecha de nacimiento del autor"
-                return
-            }*/
             val Autorid = id
 
             val referenceData = FirebaseDatabase.getInstance().getReference("Libros").child(Autorid)
@@ -67,10 +52,10 @@ class IngresarLibroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Valor de ID nulo ", Toast.LENGTH_SHORT).show()
             }
 
-            /*val retorno = Intent(this, ConsultarAutorActivity::class.java)
+            val retorno = Intent(this, ConsultarAutorActivity::class.java)
             retorno.putExtra("usuario", usuario)
             retorno.putExtra("id",id)
-            startActivity(retorno)*/
+            startActivity(retorno)
 
     }
 }
