@@ -17,6 +17,16 @@ class MenuActivity : AppCompatActivity() {
         btnCrearAutor.setOnClickListener {
             crearAutor()
         }
+
+        btnAutor.setOnClickListener {
+            mostrarAutores()
+        }
+    }
+
+     fun mostrarAutores() {
+         val intentCrearAutor = Intent(this, ConsultarAutorActivity::class.java)
+         intentCrearAutor.putExtra("usuario", usuario)
+         startActivity(intentCrearAutor)
     }
 
     fun crearAutor() {

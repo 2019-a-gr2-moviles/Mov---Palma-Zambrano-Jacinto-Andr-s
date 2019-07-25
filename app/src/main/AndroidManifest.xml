@@ -11,7 +11,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name=".ActualizarAutorActivity">
+        </activity>
+        <activity android:name=".ConsultarAutorActivity">
+        </activity>
         <activity android:name=".IngresarAutorActivity">
         </activity>
         <activity

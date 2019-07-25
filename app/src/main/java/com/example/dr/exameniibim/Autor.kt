@@ -5,4 +5,9 @@ val nombres:String,
 val apellidos:String,
 val fechaNacimiento:String,
 val numeroLibros:Int,
-val ecuatoriano:String)
+val ecuatoriano:String){
+
+    constructor(): this("","","","",0,""){
+
+    }
+}
