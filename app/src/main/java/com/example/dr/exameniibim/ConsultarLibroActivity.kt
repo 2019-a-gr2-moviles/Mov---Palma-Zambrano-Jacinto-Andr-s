@@ -49,7 +49,7 @@ class ConsultarLibroActivity : AppCompatActivity() {
 
                         val idLibroSeleccionado = listaLibros[position].idLibro
                         val intentLibroSeleccionado = Intent(this@ConsultarLibroActivity,ActualizarLibroActivity::class.java)
-                        intentLibroSeleccionado.putExtra("idLibro", idLibroSeleccionado)
+                        intentLibroSeleccionado.putExtra("idLibroRecibido", idLibroSeleccionado)
                         intentLibroSeleccionado.putExtra("usuario", usuario)
                         intentLibroSeleccionado.putExtra("id",id)
 

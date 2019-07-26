@@ -26,14 +26,14 @@ class IngresarLibroActivity : AppCompatActivity() {
 
     private fun crearLibro() {
 
-            val   ICBN = txtICBN.text.toString().toInt()
-            val  nombreLibro = txtNombreLibro.text.toString().trim()
-            val  numPaginas = txtNumPaginas.text.toString().toInt()
-            val   fechaPublicacion = txtfechaPublicacion.text.toString()
-            val   editorial = txtEditorial.text.toString().trim()
-            val edicion = txtnumEdicion.text.toString().toInt()
-            val latitud = txtLongitud.text.toString().toFloat()
-            val longitud = txtLongitud.text.toString().toFloat()
+            val   ICBN = txtICBNA.text.toString().toInt()
+            val  nombreLibro = txtNombreLibroA.text.toString().trim()
+            val  numPaginas = txtNumPaginasA.text.toString().toInt()
+            val   fechaPublicacion = txtfechaPublicacionA.text.toString()
+            val   editorial = txtEditorialA.text.toString().trim()
+            val edicion = txtnumEdicionA.text.toString().toInt()
+            val latitud = txtLongitudA.text.toString().toFloat()
+            val longitud = txtLongitudA.text.toString().toFloat()
 
             val Autorid = id
 
