@@ -61,6 +61,16 @@ class ActualizarAutorActivity : AppCompatActivity() {
             consultarLibros()
         }
 
+        btnMenuRetorno.setOnClickListener {
+            regresarMenu()
+        }
+
+    }
+
+    private fun regresarMenu() {
+        val intentRegresarMenu = Intent(this, MenuActivity::class.java)
+        intentRegresarMenu.putExtra("usuario", usuario)
+        startActivity(intentRegresarMenu)
     }
 
     private fun consultarLibros() {

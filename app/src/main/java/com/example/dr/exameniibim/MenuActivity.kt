@@ -21,9 +21,19 @@ class MenuActivity : AppCompatActivity() {
         btnAutor.setOnClickListener {
             mostrarAutores()
         }
+
+        btnMapaHijos.setOnClickListener {
+            accederMapa()
+        }
     }
 
-     fun mostrarAutores() {
+    private fun accederMapa() {
+        val intentIrMapa = Intent(this, MapsActivity::class.java)
+        intentIrMapa.putExtra("usuario", usuario)
+        startActivity(intentIrMapa)
+    }
+
+    fun mostrarAutores() {
          val intentCrearAutor = Intent(this, ConsultarAutorActivity::class.java)
          intentCrearAutor.putExtra("usuario", usuario)
          startActivity(intentCrearAutor)

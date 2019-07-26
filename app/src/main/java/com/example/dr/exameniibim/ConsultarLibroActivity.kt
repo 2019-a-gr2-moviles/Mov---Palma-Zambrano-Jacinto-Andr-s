@@ -35,7 +35,7 @@ class ConsultarLibroActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                //Toast.makeText(this@ConsultarLibroActivity, "Id recibido: ${id}  ID Snapshot: ${p0.key}",Toast.LENGTH_SHORT).show()
+
                 if(p0.exists()){
                     listaLibros.clear()
                     for(libro in p0.children){
