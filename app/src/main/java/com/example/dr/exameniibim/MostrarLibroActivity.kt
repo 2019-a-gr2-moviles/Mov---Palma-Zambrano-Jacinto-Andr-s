@@ -101,7 +101,9 @@ class MostrarLibroActivity : AppCompatActivity() {
             }
         })
 
-        iraMenu()
+       btnVolverMenu.setOnClickListener {
+           iraMenu()
+       }
 
     }
 
