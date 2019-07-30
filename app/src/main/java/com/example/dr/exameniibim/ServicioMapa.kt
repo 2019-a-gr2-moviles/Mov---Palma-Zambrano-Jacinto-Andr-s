@@ -8,6 +8,7 @@ class ServicioMapa {
         var longitudes = ArrayList<Float>()
         var todolosHijos = ArrayList<Libro>()
         var arregloIdHijos =  ArrayList<String>()
+        var libroIntent = String()
     }
 
 

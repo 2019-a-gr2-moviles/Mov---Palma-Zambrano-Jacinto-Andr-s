@@ -69,7 +69,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnCamera
     var arregloIdPadres = ArrayList<String?>()
     //var arregloIdHijos = ArrayList<String?>()
     lateinit var datosHijo:Libro
-    lateinit var libroIntent:Libro
+
 
 
 
@@ -219,13 +219,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnCamera
 
                 for(hijo in ServicioMapa.todolosHijos){
                     if (id == hijo.idLibro){
-                        Log.i("HIJOPUTAMADRE", "El hijo si existe")
-                        libroIntent = hijo
+
+                        ServicioMapa.libroIntent = hijo.idLibro
 
                     }
                 }
 
-                mostrarMarker(libroIntent.idLibro)
+                Log.i("HIJOPUTAMADRE", ServicioMapa.libroIntent)
+                mostrarMarker(ServicioMapa.libroIntent)
 
                 false
             }
@@ -237,7 +238,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnCamera
 
 fun mostrarMarker(idMarker:String){
     val intentMostrar = Intent(this, MostrarLibroActivity::class.java)
-    intentMostrar.putExtra("idLibro", idMarker)
+    //intentMostrar.putExtra("idLibro", idMarker)
     this.startActivity(intentMostrar)
     this.finish()
 }
