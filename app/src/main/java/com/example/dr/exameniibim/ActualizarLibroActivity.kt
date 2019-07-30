@@ -93,7 +93,7 @@ class ActualizarLibroActivity : AppCompatActivity() {
         val   fechaPublicacion = txtfechaPublicacionA.text.toString()
         val   editorial = txtEditorialA.text.toString().trim()
         val edicion = txtnumEdicionA.text.toString().toInt()
-        val latitud = txtLongitudA.text.toString().toFloat()
+        val latitud = txtLatitudA.text.toString().toFloat()
         val longitud = txtLongitudA.text.toString().toFloat()
 
         val Autorid = id

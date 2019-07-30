@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MostrarLibroActivity" android:background="@color/colorPrimaryDark">
+
+    <TextView
+            android:text="MOSTRAR LIBRO LOCALIZADO"
+            android:layout_width="296dp"
+            android:layout_height="90dp"
+            android:id="@+id/txtTituloMostrar" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp" android:textAlignment="center" android:textSize="30sp"
+            app:layout_constraintHorizontal_bias="0.494" android:textStyle="bold"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Longitud"
+            android:ems="10"
+            android:id="@+id/txtLongitudMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtLatitudMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtLatitudMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtLatitudMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Latitud"
+            android:ems="10"
+            android:id="@+id/txtLatitudMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumPagMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtNumPagMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumPagMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Fecha Publicacion"
+            android:ems="10"
+            android:id="@+id/txtFechaMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtEdicionMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtEdicionMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtEdicionMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Numero Paginas"
+            android:ems="10"
+            android:id="@+id/txtNumPagMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtFechaMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtFechaMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtFechaMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Editorial"
+            android:ems="10"
+            android:id="@+id/txtEditorialMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtNombreLibroMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreLibroMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombreLibroMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="Edicion"
+            android:ems="10"
+            android:id="@+id/txtEdicionMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtEditorialMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtEditorialMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtEditorialMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Nombre Libro"
+            android:ems="10"
+            android:id="@+id/txtNombreLibroMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtIcbnMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtIcbnMostrar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtIcbnMostrar"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="ICBN"
+            android:ems="10"
+            android:id="@+id/txtIcbnMostrar" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtTituloMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtTituloMostrar" app:layout_constraintHorizontal_bias="0.506"
+            android:hint="ICBN"/>
+    <Button
+            android:text="Menuu"
+            android:layout_width="134dp"
+            android:layout_height="42dp"
+            android:id="@+id/btnVolverMenu" android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtLongitudMostrar"
+            app:layout_constraintEnd_toEndOf="@+id/txtLongitudMostrar"
+            app:layout_constraintStart_toStartOf="@+id/txtLongitudMostrar"
+            app:layout_constraintHorizontal_bias="0.496" android:background="@drawable/button"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
